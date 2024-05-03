@@ -1,0 +1,21 @@
+step 1 - right click on project and show in terminal 
+  use command npm init -y
+  then package.json file will be created in that file we need to add
+  "type" : "module",
+
+ step 2 - npx tailwindcss init
+  this will create config file for tailwind css in that we need to provide path to our html js file so that it will build our files
+  content : ["./src/main/resources/**/*.{html.js}"],
+
+  Step 3 - we need to create input.css under src/main/resources/static 
+    @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+
+step 4 - create output.css. here whatever we use in tailwindcss that will be written in in output.css
+npx tailwindcss -i ./src/main/resources/static/css/input.css -o ./src/main/resources/static/css/output.css --watch 
+
+
+  now we can use tailwind in our project
+
+to link -- <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
